@@ -119,8 +119,7 @@ def process_file(filename, printer, dt, data_only):
                     buf += f.read(data.size() - len(buf))
                     t = data.unpack(buf)
                     # For time reference
-                    date_str = dt[0].strftime('%Y-%m-%d %H:%M')
-                    printer.print_data(t, date=date_str)
+                    printer.print_data(t, date=dt[0])
                     # Assume that this is called for every minute
                     dt[0] += datetime.timedelta(minutes=1)
 
